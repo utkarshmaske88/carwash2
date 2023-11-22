@@ -1,8 +1,4 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	iVPolish : VPolishCtrl_typ;
+	sVPolishState : sStep_enum;
 END_VAR

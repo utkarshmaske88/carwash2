@@ -16,11 +16,12 @@ PROGRAM _CYCLIC
 
 		enWAIT:
 			IF iDry.Cmd.Start = TRUE THEN
+				iDry.Cmd.Start := FALSE;
 				sDryState		:= enSTART;
 			END_IF;
 			
 		enSTART:
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = FALSE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = FALSE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= TRUE;
 				iDry.IO.doRelayHD1Lift	:= FALSE;
 				iDry.IO.doRelayVDHeater	:=TRUE;
@@ -28,33 +29,33 @@ PROGRAM _CYCLIC
 				iDry.IO.doRelayHD1Vent	:= TRUE;
 				iDry.IO.doRelayHD1Heater:= TRUE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = TRUE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = FALSE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower		:= FALSE;
 				iDry.IO.doRelayHD1Lift		:= FALSE;
 				sDryState					:= enOPERATION;
 			END_IF;
 		enOPERATION:
-			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = TRUE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = FALSE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= FALSE;
 				iDry.IO.doRelayHD1Lift	:= FALSE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = TRUE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = TRUE) AND (iDry.IO.diSens1Dry2 = TRUE) AND (iDry.IO.diSens1Dry3 = TRUE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= FALSE;
 				iDry.IO.doRelayHD1Lift	:= TRUE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = TRUE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = TRUE) AND (iDry.IO.diSens1Dry2 = TRUE) AND (iDry.IO.diSens1Dry3 = FALSE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= FALSE;
 				iDry.IO.doRelayHD1Lift	:= TRUE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = FALSE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = TRUE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= TRUE;
 				iDry.IO.doRelayHD1Lift	:= FALSE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = TRUE) THEN
+			IF (iDry.IO.diSens1Dry1 = FALSE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = TRUE) AND (iDry.IO.diSens1Dry4 = TRUE) THEN
 				iDry.IO.doRelayHD1Lower	:= FALSE;
 				iDry.IO.doRelayHD1Lift	:= FALSE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens1Dry1 = FALSE) AND (iDry.IO.diSens1Dry2 = FALSE) AND (iDry.IO.diSens1Dry3 = FALSE) AND (iDry.IO.diSens1Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD1Lower	:= FALSE;
 				iDry.IO.doRelayHD1Lift	:= FALSE;
 				iDry.IO.doRelayHD1Vent	:= FALSE;
@@ -72,8 +73,9 @@ PROGRAM _CYCLIC
 			iDry.IO.doRelayHD1Heater:= FALSE;
 			iDry.IO.doRelayHD1Vent	:= FALSE;
 			iDry.IO.doRelayHD1Heater:= FALSE;
-			iDry.Cmd.Start		:= FALSE;
+			iDry.Cmd.Start			:= FALSE;
 			IF iDry.Cmd.ErrorReset=TRUE THEN
+				iDry.Status.Error:=FALSE;
 				sDryState:=enWAIT;
 			END_IF;
 	END_CASE;
@@ -82,7 +84,7 @@ PROGRAM _CYCLIC
 
 		enWAIT:
 			IF iDry.Cmd.Start = TRUE THEN
-				sDryState		:= enSTART;
+				sDryState2		:= enSTART;
 			END_IF;
 			
 		enSTART:
@@ -106,15 +108,15 @@ PROGRAM _CYCLIC
 				iDry.IO.doRelayHD2Lower	:= FALSE;
 				iDry.IO.doRelayHD2Lift	:= TRUE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = TRUE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens2Dry1 = TRUE) AND (iDry.IO.diSens2Dry2 = TRUE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD2Lower	:= FALSE;
 				iDry.IO.doRelayHD2Lift	:= TRUE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
+			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = FALSE) THEN
 				iDry.IO.doRelayHD2Lower	:= TRUE;
 				iDry.IO.doRelayHD2Lift	:= FALSE;
 			END_IF;
-			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = TRUE) AND (iDry.IO.diSens2Dry4 = TRUE) THEN
+			IF (iDry.IO.diSens2Dry1 = FALSE) AND (iDry.IO.diSens2Dry2 = FALSE) AND (iDry.IO.diSens2Dry3 = FALSE) AND (iDry.IO.diSens2Dry4 = TRUE) THEN
 				iDry.IO.doRelayHD2Lower	:= FALSE;
 				iDry.IO.doRelayHD2Lift	:= FALSE;
 			END_IF;
@@ -132,8 +134,9 @@ PROGRAM _CYCLIC
 			iDry.IO.doRelayHD2Lift	:= FALSE;
 			iDry.IO.doRelayVDHeater	:=FALSE;
 			iDry.IO.doRelayVDVent	:=FALSE;
-			iDry.Cmd.Start		:= FALSE;
+			iDry.Cmd.Start			:= FALSE;
 			IF iDry.Cmd.ErrorReset=TRUE THEN
+				iDry.Status.Error	:=FALSE;
 				sDryState:=enWAIT;
 			END_IF;
 

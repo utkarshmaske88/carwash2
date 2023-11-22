@@ -4,6 +4,7 @@ TYPE
 		Start : BOOL;
 		EStop : BOOL;
 		Stop : BOOL;
+		ErrorReset : USINT;
 	END_STRUCT;
 	VBrushCtrl_typ : 	STRUCT 
 		Cmd : VBrushCmd_typ;

@@ -6,6 +6,9 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	IF iVBrush.Status.Error=TRUE THEN
+		sVBrushState:=enERROR;
+	END_IF;
 	
 	CASE sVBrushState OF
 		
@@ -32,7 +35,6 @@ PROGRAM _CYCLIC
 				iVBrush.IO.doRelayVBLOpen :=FALSE;
 				sVBrushState:=enCLOSE;
 			END_IF;
-			//	(iVBrush.IO.aiVBLForceS >120 AND iVBrush.IO.aiVBRForceS >120)
 			
 		enCLOSE:
 			iVBrush.IO.doRelayVBLClose:=TRUE;
@@ -45,11 +47,21 @@ PROGRAM _CYCLIC
 		enOPERATION:	
 			iVBrush.IO.doRelayVBLClose:=FALSE;
 			iVBrush.IO.doRelayVBRClose:=FALSE;
-		//			IF (iVBrush.IO.aiVBLForceS =0 AND iVBrush.IO.aiVBRForceS =0) THEN
-		//				sVBrushState:=enSTART;
-		//			END_IF;
+			IF (iVBrush.IO.aiVBLForceS =0 AND iVBrush.IO.aiVBRForceS =0) THEN
+				sVBrushState:=enSTART;
+			END_IF;
 			
-
+		enERROR:
+			iVBrush.IO.doRelayVBLClose:=FALSE;
+			iVBrush.IO.doRelayVBRClose:=FALSE;
+			iVBrush.IO.doRelayVBROpen :=FALSE;
+			iVBrush.IO.doRelayVBLOpen :=FALSE;
+			IF iVBrush.Cmd.ErrorReset=TRUE THEN
+				iVBrush.Cmd.ErrorReset:=FALSE;
+				iVBrush.Status.Error:=FALSE;
+				sVBrushState:=enSTART;	
+			END_IF;
+		
 	END_CASE;
 END_PROGRAM
 
