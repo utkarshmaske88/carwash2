@@ -1,0 +1,4 @@
+VAR
+	iHPolish : PolishCtrl_typ;
+	sHPolishState : HorizontalPolishState_enum;
+END_VAR

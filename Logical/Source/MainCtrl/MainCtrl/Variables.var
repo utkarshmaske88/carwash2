@@ -1,0 +1,47 @@
+VAR
+	ScalDirt : LCRScal;
+	Status2 : UINT; (*status*)
+	pEntryCtrl : REFERENCE TO EntryCtrl_typ; (*pointer*)
+	SizeChem : UDINT; (*size of foil*)
+	ChemAddress : UDINT; (*Address of foil*)
+	pChemCtrl : REFERENCE TO ChemCtrl_typ; (*pointer*)
+	txt : WSTRING[80];
+	SizeEntry : UDINT; (*size of foil*)
+	EntryAddress : UDINT; (*Address of foil*)
+	New_Variable : USINT;
+	Car : INT;
+	Status3 : UINT; (*status*)
+	Status1 : UINT; (*status*)
+	i : INT;
+	SizeAux : UDINT;
+	AuxAddress : UDINT;
+	pAuxCtrl : REFERENCE TO Auxillary_typ;
+	txt1 : WSTRING[80];
+	iFb_Timer : ARRAY[0..2] OF TON := [3((PT:=T#147720ms))];
+	Status4 : UINT;
+	HPAddress : UDINT;
+	SizeHP : UDINT;
+	pHPCtrl : REFERENCE TO HPWaterCtrl_typ;
+	gMain : MainCtrl_typ;
+	Status5 : UINT;
+	HBAddress : UDINT;
+	SizeHBrush : UDINT;
+	pHBrushCtrl : REFERENCE TO HBrushCtrl_typ;
+	Status6 : UINT;
+	HPolishAddress : UDINT;
+	SizeHPolish : UDINT;
+	pHPolish : REFERENCE TO PolishCtrl_typ;
+	iFl_CarFlag : BOOL;
+	Status7 : UINT;
+	UBodyAddress : UDINT;
+	SizeUBody : UDINT;
+	Status8 : UINT;
+	WaxAddress : UDINT;
+	SizeWax : UDINT;
+	pUBCtrl : REFERENCE TO UBCtrl_typ;
+	pWaxCtrl : REFERENCE TO WaxCtrl_typ;
+	Status9 : UINT;
+	VBrushAddress : UDINT;
+	SizeVBrush : UDINT;
+	pVBrush : REFERENCE TO VBrushCtrl_typ;
+END_VAR

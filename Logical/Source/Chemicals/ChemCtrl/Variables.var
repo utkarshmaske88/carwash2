@@ -1,0 +1,5 @@
+VAR
+	sChemState : sStep_enum;
+	ScalDirt : LCRScal;
+	iChem : ChemCtrl_typ;
+END_VAR

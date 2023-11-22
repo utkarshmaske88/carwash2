@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package">MainCtrl</Object>
+    <Object Type="Package">Entrance</Object>
+    <Object Type="Package">Chemicals</Object>
+    <Object Type="Package">HPWater</Object>
+    <Object Type="Package">HBrush</Object>
+    <Object Type="Package">VBrush</Object>
+    <Object Type="Package">OptUnderBody</Object>
+    <Object Type="Package">OptVpolish</Object>
+    <Object Type="Package">OptWax</Object>
+    <Object Type="Package">Drying</Object>
+    <Object Type="Package">CarExit</Object>
+    <Object Type="Package">Infrastructure</Object>
+    <Object Type="Package">VisuCtrl</Object>
+    <Object Type="Package">Auxillary</Object>
+    <Object Type="Package">HPolishp</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,4 @@
+VAR
+	iWax : WaxCtrl_typ;
+	iWaxState : sStep;
+END_VAR

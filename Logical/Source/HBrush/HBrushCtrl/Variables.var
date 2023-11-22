@@ -1,0 +1,5 @@
+VAR
+	iHBrush : HBrushCtrl_typ;
+	sHBrushState : HorizonBrushState_enum;
+	iDry : DryCtrl_typ;
+END_VAR
