@@ -16,7 +16,6 @@ PROGRAM _CYCLIC
 
 		enWAIT:
 			IF iDry.Cmd.Start = TRUE THEN
-				iDry.Cmd.Start := FALSE;
 				sDryState		:= enSTART;
 			END_IF;
 			
@@ -73,7 +72,6 @@ PROGRAM _CYCLIC
 			iDry.IO.doRelayHD1Heater:= FALSE;
 			iDry.IO.doRelayHD1Vent	:= FALSE;
 			iDry.IO.doRelayHD1Heater:= FALSE;
-			iDry.Cmd.Start			:= FALSE;
 			IF iDry.Cmd.ErrorReset=TRUE THEN
 				iDry.Status.Error:=FALSE;
 				sDryState:=enWAIT;
