@@ -22,7 +22,6 @@ VAR
 	HPAddress : UDINT;
 	SizeHP : UDINT;
 	pHPCtrl : REFERENCE TO HPWaterCtrl_typ;
-	gMain : MainCtrl_typ;
 	Status5 : UINT;
 	HBAddress : UDINT;
 	SizeHBrush : UDINT;
@@ -44,4 +43,17 @@ VAR
 	VBrushAddress : UDINT;
 	SizeVBrush : UDINT;
 	pVBrush : REFERENCE TO VBrushCtrl_typ;
+	iMi_Mode01 : BOOL;
+	Status10 : UINT;
+	VPolishAddress : UDINT;
+	SizeVPolish : UDINT;
+	Status11 : UINT;
+	DryAddress : UDINT;
+	SizeDry : UDINT;
+	pVPolish : REFERENCE TO VPolishCtrl_typ;
+	pDry : REFERENCE TO DryCtrl_typ;
+	Status12 : UINT;
+	Dry2Address : UDINT;
+	SizeDry2 : UDINT;
+	pDry2 : REFERENCE TO DryCtrl_typ;
 END_VAR

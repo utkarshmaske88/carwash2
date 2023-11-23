@@ -17,5 +17,6 @@
     <Object Type="Package">VisuCtrl</Object>
     <Object Type="Package">Auxillary</Object>
     <Object Type="Package">HPolishp</Object>
+    <Object Type="Program" Language="IEC">Dist</Object>
   </Objects>
 </Package>

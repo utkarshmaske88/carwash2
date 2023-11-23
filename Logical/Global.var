@@ -1,3 +1,5 @@
 VAR
+	gMain : MainCtrl_typ;
+	iVa_Distance : REAL;
 	gCar : ARRAY[0..2] OF BOOL;
 END_VAR

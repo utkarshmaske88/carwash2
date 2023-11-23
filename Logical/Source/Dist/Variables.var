@@ -1,0 +1,12 @@
+VAR
+	a : REAL;
+	Status1 : UINT;
+	AuxAddress : UDINT;
+	SizeAux : UDINT;
+	pDistAux : REFERENCE TO Auxillary_typ;
+	Status2 : UINT;
+	EntryAddress : UDINT;
+	SizeEntry : UDINT;
+	pDistEntry : REFERENCE TO EntryCtrl_typ;
+	sDistState : DistanceState_enum;
+END_VAR
