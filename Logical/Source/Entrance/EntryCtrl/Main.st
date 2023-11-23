@@ -6,6 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	EntryAlarm;
 	IF iEntry.Status.Error=TRUE THEN
 		iEntryState:=enERROR;
 	END_IF;
@@ -37,6 +38,9 @@ PROGRAM _CYCLIC
 			iEntry.Cmd.Start:=FALSE;
 
 			IF iEntry.Cmd.ErrorReset = TRUE THEN
+				iEntry.Cmd.EStop:=FALSE;
+				iEntry.Status.Error:=FALSE;
+				iEntry.Cmd.ErrorReset:=FALSE;
 				iEntryState:=enWAIT;
 			END_IF;
 			

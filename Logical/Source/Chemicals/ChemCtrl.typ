@@ -5,6 +5,7 @@ TYPE
 		EStop : BOOL;
 		Stop : BOOL;
 		ErrorReset : BOOL;
+		ChemRefill : BOOL;
 	END_STRUCT;
 	ChemCtrl_typ : 	STRUCT 
 		Cmd : ChemCmd_typ;

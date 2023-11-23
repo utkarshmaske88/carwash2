@@ -6,7 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
-	
+	EStopHighPre;
 	CASE sHighPressState OF
 		enWAIT:
 			IF iHighPress.Cmd.Start = TRUE THEN
@@ -55,8 +55,19 @@ PROGRAM _CYCLIC
 				sHighPressState				:= enWAIT;
 			END_IF;
 			
-		enERROR:
-		
+		enERROR:		
+			iHighPress.IO.doRelayHPLow	:= FALSE;
+			iHighPress.IO.doRelayHPLift	:= FALSE;
+			iHighPress.IO.doRelayHPPump	:= FALSE;
+			iHighPress.IO.doValveHP		:= FALSE;
+			iHighPress.Cmd.Start		:= FALSE;
+
+			IF iHighPress.Cmd.ErrorReset = TRUE THEN
+				iHighPress.Cmd.EStop:=FALSE;
+				iHighPress.Status.Error:=FALSE;
+				iHighPress.Cmd.ErrorReset:=FALSE;
+				sHighPressState:=enWAIT;
+			END_IF;
 				
 		  
 

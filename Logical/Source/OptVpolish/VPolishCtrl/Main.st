@@ -6,7 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
-	
+	VPolAlarm;
 	IF iVPolish.Status.Error=TRUE THEN
 		sVPolishState :=enERROR;
 	END_IF;
@@ -62,6 +62,7 @@ PROGRAM _CYCLIC
 			
 			IF iVPolish.Cmd.ErrorReset=TRUE THEN
 				iVPolish.Status.Error:=FALSE;
+				iVPolish.Cmd.EStop	 :=FALSE;
 				iVPolish.Cmd.ErrorReset:=FALSE;
 				sVPolishState:=enSTART;	
 			END_IF;

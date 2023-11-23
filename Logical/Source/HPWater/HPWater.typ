@@ -4,6 +4,7 @@ TYPE
 		Start : BOOL;
 		EStop : BOOL;
 		Stop : BOOL;
+		ErrorReset : USINT;
 	END_STRUCT;
 	HPWaterCtrl_typ : 	STRUCT 
 		Cmd : HPWaterCmd_typ;

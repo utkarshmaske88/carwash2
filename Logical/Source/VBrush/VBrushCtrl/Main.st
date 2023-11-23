@@ -6,6 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	VBAlarm;
 	IF iVBrush.Status.Error=TRUE THEN
 		sVBrushState:=enERROR;
 	END_IF;

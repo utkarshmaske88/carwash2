@@ -1,8 +1,7 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	iFb_DataRecorder : MpDataRecorder;
+	iFb_DataParMode1 : MpDataRegPar;
+	iFb_DataParMode2 : MpDataRegPar;
+	iFb_DataParMode3 : MpDataRegPar;
+	iFb_DataParMode4 : MpDataRegPar;
 END_VAR

@@ -6,13 +6,15 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	WaxAlarm;
 	IF iWax.Status.Error=TRUE THEN
 		iWaxState:=enERROR;
 	END_IF;
 	CASE iWaxState OF
 		
 		enWAIT:
-			
+				
+			iWax.Cmd.WaxRefill:= TRUE ;
 			iWax.IO.doRealyWaxPump:=FALSE;
 			iWax.IO.doValveWax:=FALSE;
 			iWax.Status.PumpOn:=FALSE;
@@ -20,6 +22,7 @@ PROGRAM _CYCLIC
 			iWax.Status.Running:=FALSE;
 			
 			IF iWax.Cmd.Start=TRUE THEN
+				iWax.Cmd.WaxRefill	:= FALSE ;
 				iWaxState:=enWAXON;
 				iWax.Status.Running:=TRUE;
 			END_IF;
@@ -41,6 +44,9 @@ PROGRAM _CYCLIC
 			iWax.Status.ValveOpen:=FALSE;
 			iWax.Status.Running:=FALSE;
 			IF iWax.Cmd.ErrorReset = TRUE THEN
+				iWax.Cmd.ErrorReset:=FALSE;
+				iWax.Cmd.EStop:=FALSE;
+				iWax.Status.Error:=FALSE;
 				iWaxState:=enWAIT;
 			END_IF;
 		

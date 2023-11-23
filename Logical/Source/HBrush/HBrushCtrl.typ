@@ -4,6 +4,7 @@ TYPE
 		Start : BOOL;
 		EStop : BOOL;
 		Stop : BOOL;
+		ErrorReset : USINT;
 	END_STRUCT;
 	HBrushCtrl_typ : 	STRUCT 
 		Cmd : HBrushCmd_typ;

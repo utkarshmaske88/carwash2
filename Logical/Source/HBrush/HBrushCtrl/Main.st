@@ -6,6 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	EStopHB;
 	CASE sHBrushState OF
 		enWAIT:
 			IF iHBrush.Cmd.Start = TRUE THEN
@@ -52,7 +53,20 @@ PROGRAM _CYCLIC
 				iHBrush.Cmd.Start			:= FALSE;
 				sHBrushState				:= enWAIT;
 			END_IF;
+			
+		enERROR:		
+			iHBrush.IO.doRelayHBLower	:= FALSE;
+			iHBrush.IO.doRelayHBLift	:= FALSE;
+			iHBrush.IO.doRelayHBBrush	:= FALSE;
+			iHBrush.IO.doValveHB		:= FALSE;
+			iHBrush.Cmd.Start			:= FALSE;
 
+			IF iHBrush.Cmd.ErrorReset = TRUE THEN
+				iHBrush.Cmd.EStop:=FALSE;
+				iHBrush.Status.Error:=FALSE;
+				iHBrush.Cmd.ErrorReset:=FALSE;
+				sHBrushState:=enWAIT;
+			END_IF;
 	END_CASE;
 	
 END_PROGRAM

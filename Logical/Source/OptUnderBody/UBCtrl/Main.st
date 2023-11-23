@@ -6,6 +6,8 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	
+	UBAlarm;
 	IF iUBody.Status.Error=TRUE THEN
 		iUBodyState:=enERROR;
 	END_IF;
@@ -31,12 +33,15 @@ PROGRAM _CYCLIC
 				iUBodyState:=enWAIT;
 			END_IF;
 		enERROR:
-			iUBody.IO.doRelayPump:=FALSE;
-			iUBody.IO.doValveUB:=FALSE;
-			iUBody.Status.ValveOpen:=FALSE;
-			iUBody.Status.PumpOpen:=FALSE;
-			IF iUBody.Cmd.ErrorReset = TRUE THEN
-				iUBodyState:=enWAIT;
+			iUBody.IO.doRelayPump		:=FALSE;
+			iUBody.IO.doValveUB			:=FALSE;
+			iUBody.Status.ValveOpen		:=FALSE;
+			iUBody.Status.PumpOpen		:=FALSE;
+			IF iUBody.Cmd.ErrorReset 	= TRUE THEN
+				iUBody.Cmd.ErrorReset 	:= FALSE;
+				iUBody.Status.Error		:=FALSE;
+				iUBody.Cmd.EStop		:=FALSE;
+				iUBodyState				:=enWAIT;
 			END_IF;
 	END_CASE;
 END_PROGRAM

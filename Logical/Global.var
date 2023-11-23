@@ -1,3 +1,7 @@
 VAR
+	gMi_Mode2 : BOOL;
+	gMi_Mode3 : BOOL;
+	gMi_Mode4 : BOOL;
+	gMi_Mode1 : BOOL;
 	gCar : ARRAY[0..2] OF BOOL;
 END_VAR

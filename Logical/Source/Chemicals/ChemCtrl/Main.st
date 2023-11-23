@@ -6,6 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	ChemAlarm;
 	iChem.Par.ChemLevel:=ScalDirt.y;
 	
 	//if error then error state
@@ -23,19 +24,22 @@ PROGRAM _CYCLIC
 			END_IF;
 			
 		enSPRAYON:
-			iChem.IO.doChemWaterValve:=TRUE;
-			iChem.Status.SprayON:=TRUE ;
+			iChem.IO.doChemWaterValve	:=TRUE;
+			iChem.Status.SprayON		:=TRUE ;
 			IF iChem.IO.doChemWaterValve=FALSE THEN
-				sChemState:=enWAIT;
+				sChemState				:=enWAIT;
 			END_IF;
 				
 		enERROR:
 			iChem.Status.Running:=FALSE;
-			iChem.IO.doChemWaterValve:=FALSE;
-			iChem.Status.SprayON:=FALSE ;
+			iChem.IO.doChemWaterValve	:=FALSE;
+			iChem.Status.SprayON		:=FALSE ;
 			
 			IF iChem.Cmd.ErrorReset=TRUE THEN
-				sChemState:=enWAIT;
+				iChem.Cmd.ErrorReset	:=FALSE;
+				iChem.Cmd.EStop			:=FALSE;
+				iChem.Status.Error		:=FALSE;
+				sChemState				:=enWAIT;
 			END_IF;	
 		
 	END_CASE;

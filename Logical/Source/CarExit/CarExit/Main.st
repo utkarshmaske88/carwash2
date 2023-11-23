@@ -4,7 +4,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	
+	ExitAlarm;
 	IF iExit.Status.Error=TRUE THEN
 		sExitState:=enERROR;
 	END_IF;
@@ -33,7 +33,10 @@ PROGRAM _CYCLIC
 			iExit.IO.doRelayLiftDoor:=FALSE;	
 			iExit.Status.LiftingDoor:=FALSE;
 			iExit.Status.LowringDoor:=FALSE;
-			IF iExit.Cmd.ErrorReset 	= TRUE THEN
+			IF iExit.Cmd.ErrorReset = TRUE THEN
+				iExit.Cmd.ErrorReset:=FALSE;
+				iExit.Cmd.EStop		:=FALSE;
+				iExit.Status.Error	:=FALSE;
 				sExitState			:=enWAIT;
 			END_IF;
 	END_CASE;

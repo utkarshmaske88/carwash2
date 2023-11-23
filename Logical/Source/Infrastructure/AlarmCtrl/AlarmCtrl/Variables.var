@@ -1,8 +1,5 @@
-
 VAR
-
-END_VAR
-
-VAR CONSTANT
-
+	iFb_AlarmX : MpAlarmXCore;
+	iFb_AlarmUI : MpAlarmXListUI;
+	UIConnectCore : MpAlarmXListUIConnectType;
 END_VAR

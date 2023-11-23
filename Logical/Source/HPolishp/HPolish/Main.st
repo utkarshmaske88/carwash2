@@ -6,7 +6,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
-
+	HPAlarm;
 	CASE sHPolishState OF
 		enWAIT:
 			IF iHPolish.Cmd.Start = TRUE THEN
@@ -51,6 +51,21 @@ PROGRAM _CYCLIC
 				iHPolish.Cmd.Start			:= FALSE;
 				sHPolishState				:= enWAIT;
 			END_IF;
+			
+		enERROR:
+			iHPolish.IO.doRelayLower	:= FALSE;
+			iHPolish.IO.doRelayLift		:= FALSE;
+			iHPolish.IO.doRelayBrush	:= FALSE;
+			iHPolish.Cmd.Start			:= FALSE;
+			IF iHPolish.Cmd.ErrorReset=TRUE THEN
+				iHPolish.Cmd.EStop:=FALSE;
+				iHPolish.Cmd.ErrorReset:=FALSE;
+				iHPolish.Status.Error:=FALSE;
+				sHPolishState:=enSTART;
+			END_IF;
+		
+		
+		
 	END_CASE;
 END_PROGRAM
    

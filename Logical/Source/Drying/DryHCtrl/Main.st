@@ -7,6 +7,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
+	DryAlarm;
 	IF iDry.Status.Error=TRUE THEN
 		sDryState:=enERROR;
 		sDryState2:=enERROR;
@@ -73,7 +74,9 @@ PROGRAM _CYCLIC
 			iDry.IO.doRelayHD1Vent	:= FALSE;
 			iDry.IO.doRelayHD1Heater:= FALSE;
 			IF iDry.Cmd.ErrorReset=TRUE THEN
-				iDry.Status.Error:=FALSE;
+				iDry.Cmd.ErrorReset	:=FALSE;
+				iDry.Cmd.EStop		:=FALSE;
+				iDry.Status.Error	:=FALSE;
 				sDryState:=enWAIT;
 			END_IF;
 	END_CASE;

@@ -44,4 +44,8 @@ VAR
 	VBrushAddress : UDINT;
 	SizeVBrush : UDINT;
 	pVBrush : REFERENCE TO VBrushCtrl_typ;
+	iVa_WaterLevel : REAL;
+	iVa_WRefill : BOOL;
+	iVa_ChemLevel : REAL;
+	iVa_ChemRefill : BOOL;
 END_VAR

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gAlarmXCore" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="BySeverity">
+        <Group ID="[0]">
+          <Property ID="Severity" Value="100" />
+          <Selector ID="[0]" Value="Reaction">
+            <Property ID="Name" Value="EStopErr" />
+          </Selector>
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="EStopChem" />
+        <Property ID="Message" Value="EStop Pressed chemical control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="EStopHighPre" />
+        <Property ID="Message" Value="EStop Pressed High pressurecontrol" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="EStopHB" />
+        <Property ID="Message" Value="EStop Pressed horizontal brush control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="EStopVB" />
+        <Property ID="Message" Value="EStop Pressed vertical brush control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="EStopUB" />
+        <Property ID="Message" Value="EStop Pressed under body control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="EStopVPol" />
+        <Property ID="Message" Value="Estop Pressed Vertical polish" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="EStopDry" />
+        <Property ID="Message" Value="EStop Pressed Dry control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="EStopHWax" />
+        <Property ID="Message" Value="EStop Pressed HotWax control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="EStopConv" />
+        <Property ID="Message" Value="EStop Pressed Conveyor control" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[9]">
+        <Property ID="Name" Value="WaterLow" />
+        <Property ID="Message" Value="Water level is low" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[10]">
+        <Property ID="Name" Value="ChemLow" />
+        <Property ID="Message" Value="Chemical level is low" />
+        <Property ID="Severity" Value="50" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[11]">
+        <Property ID="Name" Value="WaxLow" />
+        <Property ID="Message" Value="Wax level is low" />
+        <Property ID="Severity" Value="50" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[12]">
+        <Property ID="Name" Value="EStopEntry" />
+        <Property ID="Message" Value="Emergency stop of entry is pressed" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[13]">
+        <Property ID="Name" Value="EStopHPol" />
+        <Property ID="Message" Value="Estop Pressed Horizonatal polish" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[14]">
+        <Property ID="Name" Value="EStopExit" />
+        <Property ID="Message" Value="EStop of exit is pressed" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+  <Element ID="gAlarmXCore_1" Type="mpalarmxcore" />
+</Configuration>

@@ -15,7 +15,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	//accessing data from the address
+	//accessing data from the addressZZ
 	pEntryCtrl ACCESS EntryAddress;
 	pChemCtrl ACCESS ChemAddress;
 	pAuxCtrl ACCESS AuxAddress;
