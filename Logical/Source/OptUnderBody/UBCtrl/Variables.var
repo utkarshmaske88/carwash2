@@ -1,4 +1,4 @@
 VAR
-	iUBody : UBCtrl_typ;
-	iUBodyState : sStep;
+	iUBody : UBCtrl_typ; (*underbody main control*)
+	iUBodyState : sStep; (*enum main*)
 END_VAR

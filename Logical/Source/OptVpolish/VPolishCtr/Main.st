@@ -1,6 +1,8 @@
 
 PROGRAM _INIT
 	(* Insert code here *)
+	iVPolish.IO.aoVPLVel:=5;
+	iVPolish.IO.aoVPRVel:=5;
 	 
 END_PROGRAM
 

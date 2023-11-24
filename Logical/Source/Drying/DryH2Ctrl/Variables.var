@@ -1,0 +1,5 @@
+VAR
+	sDryState : sStep_enum; (*dry enum*)
+	iDry2 : DryCtrl_typ; (*main control*)
+	sDryState2 : sStep_enum; (*enumeration of drystate*)
+END_VAR

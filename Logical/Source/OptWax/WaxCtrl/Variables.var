@@ -1,4 +1,4 @@
 VAR
-	iWax : WaxCtrl_typ;
-	iWaxState : sStep;
+	iWax : WaxCtrl_typ; (*main control*)
+	iWaxState : sStep; (*enum of wax*)
 END_VAR

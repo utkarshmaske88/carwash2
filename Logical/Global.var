@@ -3,5 +3,7 @@ VAR
 	gMi_Mode3 : BOOL;
 	gMi_Mode4 : BOOL;
 	gMi_Mode1 : BOOL;
+	gMain : MainCtrl_typ;
+	iVa_Distance : REAL;
 	gCar : ARRAY[0..2] OF BOOL;
 END_VAR

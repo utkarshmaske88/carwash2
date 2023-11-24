@@ -6,7 +6,6 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	(* Insert code here *)
-	ChemAlarm;
 	iChem.Par.ChemLevel:=ScalDirt.y;
 	
 	//if error then error state

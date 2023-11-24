@@ -1,0 +1,4 @@
+VAR
+	iVPolish : VPolishCtrl_typ; (*main vp control*)
+	sVPolishState : sStep_enum; (*enum of polsih*)
+END_VAR

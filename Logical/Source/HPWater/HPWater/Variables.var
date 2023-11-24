@@ -1,4 +1,4 @@
 VAR
-	sHighPressState : HighPressureState_enum;
-	iHighPress : HPWaterCtrl_typ;
+	sHighPressState : HighPressureState_enum; (*enumeration*)
+	iHighPress : HPWaterCtrl_typ; (*main control*)
 END_VAR
